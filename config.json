@@ -1,0 +1,28 @@
+{
+  "network": {
+    "chainId": 1337,
+    "networkId": 1337,
+    "genesisFile": "./genesis.json",
+    "nodePort": 30303,
+    "rpcPort": 8545,
+    "wsPort": 8546
+  },
+  "accounts": {
+    "keystoreDir": "./keystore",
+    "passwordFile": "./password"
+  },
+  "peers": {
+    "bootnodes": [
+      "enode://<bootnode-address-1>@<ip-1>:30303",
+      "enode://<bootnode-address-2>@<ip-2>:30303"
+    ]
+  },
+  "mining": {
+    "enabled": false,
+    "coinbase": "0x0000000000000000000000000000000000000000",
+    "threads": 1
+  },
+  "logging": {
+    "level": "INFO"
+  }
+}
