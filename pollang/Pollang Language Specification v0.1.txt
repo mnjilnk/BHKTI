@@ -1,0 +1,213 @@
+**Pollang Language Specification v0.1**
+
+```markdown
+# Pollang v0.1 - Proof of Labor Language Specification
+
+## The Problem Pollang Solves
+
+Current smart contract languages don't understand the difference between real work and speculation. They treat all transactions equally - whether it's a casino token pump or a pizza shop serving customers. This is fundamentally broken.
+
+Pollang is the first programming language that knows labor creates value. It's built specifically for BHKTI's Proof of Labor consensus where computational mining and commercial validation alternate every block.
+
+## Core Philosophy
+
+Every Pollang contract enforces a simple truth: value comes from work. The language makes speculation mechanically impossible while rewarding genuine labor automatically.
+
+## How Pollang Works
+
+### 1. Block Context Awareness
+
+Pollang contracts know what type of block they're executing in:
+
+```pollang
+contract BlockRewards {
+    function distributeReward() {
+        if (block.type == BlockType.PoW) {
+            // Computational labor: higher energy = higher reward
+            reward(miner.address, 216 BHKTI);
+            founderFee(34.56 BHKTI);
+        } else if (block.type == BlockType.PoA) {
+            // Commercial labor: real business = steady reward
+            reward(validator.address, 108 BHKTI);
+            founderFee(17.28 BHKTI);
+        }
+    }
+}
+```
+
+The 2:1 ratio reflects energy expenditure - mining burns electricity, validation burns time.
+
+### 2. Labor Verification Primitives
+
+Built-in functions that verify real work happened:
+
+```pollang
+// Verify a business is real
+requireBusinessLicense(address validator);
+requireUptime(address validator, 95%);  // Must be actually operating
+
+// Verify actual commerce occurred
+recordTransaction(customer, amount);
+verifyCustomerPresence(customer, location);  // Physical presence check
+
+// Verify computational work
+verifyHashPower(difficulty, solution);
+recordComputationalWork(cycles, duration);
+```
+
+You can't fake these. They check real-world activity.
+
+### 3. Instant Confirmation for Commerce
+
+Validators can provide 5-second soft confirmations for retail:
+
+```pollang
+contract RetailPayment {
+    function processPayment(customer, amount, orderId) {
+        bytes32 txHash = recordTransaction(customer, amount);
+        
+        // If 66% of validators witness it, goods release immediately
+        if (softConfirmed(txHash)) {
+            releaseGoods(customer, orderId);
+        }
+        
+        // Full confirmation at 6 blocks for final settlement
+        if (confirmations(txHash) >= 6) {
+            distributeRewards();
+        }
+    }
+}
+```
+
+Bob's Pizza doesn't wait 43 minutes. Customer pays, validators attest, coffee walks out.
+
+### 4. Automatic Slashing
+
+Misbehave and the protocol punishes you automatically:
+
+```pollang
+contract Slashing {
+    function checkValidator(address validator) {
+        if (uptime(validator) < 95%) {
+            suspend(validator, 30 days);
+        }
+        
+        if (doubleSign(validator)) {
+            ban(validator);
+            confiscateRewards(validator);
+        }
+    }
+}
+```
+
+No governance votes needed. Break the rules, lose your rewards.
+
+## Data Types
+
+Pollang introduces labor-specific types:
+
+```pollang
+BlockType (PoW | PoA)
+ValidatorStatus (Active | Suspended | Banned)
+LaborType (Computational | Commercial)
+AttestationLevel (None | Soft | Full)
+```
+
+These aren't just labels - they're enforced by the VM.
+
+## Practical Implementation
+
+### For Developers
+
+```bash
+# Compile Pollang contract
+pollc contract.pol
+
+# Deploy to BHKTI
+pollc deploy --network=mainnet contract.pol
+
+# Test locally
+pollc test contract.pol
+```
+
+### For Businesses
+
+Your validator runs Pollang contracts automatically. When customers pay, contracts execute, rewards distribute, commerce continues. No coding required.
+
+## Why This Matters
+
+Ethereum has Solidity for generic computation. BHKTI has Pollang for labor verification.
+
+Every Pollang contract enforces the Law of Dependent Origination of Value - no value without work. This isn't philosophy anymore. It's executable code.
+
+## Next Steps
+
+Phase 1: Core language features (block awareness, labor verification)
+Phase 2: Commerce primitives (payment processing, inventory)  
+Phase 3: Advanced features (cross-chain labor verification)
+
+---
+
+*Pollang: Where code meets labor, speculation dies.*
+```
+
+Now for your README, here's the final clean version ready to push:
+
+```markdown
+# BHKTI
+
+This repository contains the source code and documentation for Bhakticoin (BHKTI), a blockchain implementing Proof of Labor consensus.
+
+## Overview
+
+BHKTI explores a hybrid consensus mechanism alternating between Proof of Work and Proof of Authority to reward real economic activity. The protocol operates on 432-second blocks with a 108,000,000 token supply cap and no premine.
+
+## Features
+
+- **Hybrid PoW/PoA Consensus**: Alternating blocks reward both miners and validators
+- **Pollang Language**: Domain-specific language for labor verification
+- **Fair Launch**: No premine, tokens earned only through work
+- **Open Source**: Transparent development
+
+## Repository Structure
+
+```
+BHKTI/
+├── core/           # Blockchain core
+├── pollang/        # Pollang compiler
+├── docs/           # Documentation
+├── tests/          # Test suites
+└── scripts/        # Build scripts
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/mnjilnk/BHKTI.git
+cd BHKTI
+npm install
+```
+
+## Contributing
+
+Fork the repository, create a feature branch, and submit a pull request.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file.
+
+## Contact
+
+**Developer**: Mathuresh Das  
+**Email**: mathuresh108@gmail.com
+
+---
+
+*BHKTI: Exploring how blockchain consensus can reward real work.*
+```

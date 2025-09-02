@@ -1,86 +1,114 @@
-BKTI
+# BHKTI
 
-This repository contains the source code, documentation, and tools for Bhakticoin (BKTI), a blockchain-based cryptocurrency built to further the Dhammunist mission.
+This repository contains the source code, documentation, and tools for Bhakticoin (BHKTI), a blockchain-based cryptocurrency exploring hybrid consensus mechanisms.
 
-Overview
+## Overview
 
-Bhakticoin (BKTI) is a cryptocurrency leveraging blockchain technology to create a decentralized network supporting value exchange and secure transactions. Designed for innovation and spiritual growth, BKTI aims to align technological advancement with holistic principles.
+Bhakticoin (BHKTI) is an experimental cryptocurrency leveraging blockchain technology to explore Proof of Labor (PoL) consensus - a hybrid mechanism alternating between computational work (PoW) and authority-based validation (PoA). Designed to investigate how digital currencies might reward different forms of value creation rather than pure speculation.
 
-Features
+## Features
 
-Decentralized Blockchain Network: Built with Proof-of-Authority (PoA) consensus for efficiency.
+**Hybrid Consensus Network**: Built with Proof of Labor (PoL) - alternating PoW/PoA blocks
+**Fair Launch Supply**: 108,000,000 BHKTI with no premine 
+**Pollang Programming**: Theoretical domain-specific language for labor verification contracts
+**Open-source and Experimental**: Research-focused development with community contributions
+**Block-Aware Architecture**: Smart contracts that understand different consensus contexts
 
-Custom Token Supply: Controlled tokenomics with pre-mined supply.
+## Repository Structure
 
-Open-source and Transparent: Fully transparent ecosystem with community-driven contributions.
+```
+BHKTI/
+├── core/             # Blockchain core implementation
+├── pollang/          # Pollang compiler and VM
+├── docs/             # Technical documentation  
+├── tests/            # Test suites
+├── scripts/          # Build and deployment scripts
+├── v1_archive/       # Legacy files
+├── README.md         # This file
+└── LICENSE           # MIT License
+```
 
-Expandable Configuration: Designed to accommodate future updates like staking and liquidity pools.
+## Getting Started
 
-Repository Structure
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Git
 
-├── genesis.json       # Genesis block configuration
-├── config.json        # Network configuration
-├── README.md          # Repository documentation
-├── LICENSE            # Licensing information
-├── keystore/          # Directory for account key storage
-├── scripts/           # Additional scripts (if needed)
-├── docs/              # Documentation files
+### Steps to Set Up Development Environment
 
-Getting Started
+1. Clone the repository:
+```bash
+git clone https://github.com/mnjilnk/BHKTI.git
+cd BHKTI
+```
 
-Prerequisites
+2. Install dependencies:
+```bash
+npm install
+```
 
-Node.js
+3. Run tests:
+```bash
+npm test
+```
 
-Geth
+4. Build from source:
+```bash
+npm run build
+```
 
-A Linux-based machine or compatible OS.
+## Theoretical Framework
 
-Steps to Set Up a Node
+### Proof of Labor Consensus
+- **Odd Blocks (PoW)**: Computational mining for security (216 BHKTI reward)
+- **Even Blocks (PoA)**: Authority validation for utility (108 BHKTI reward)  
+- **Block Time**: 432 seconds
+- **Fair Distribution**: No premine, rewards earned through work only
 
-Clone the repository:
+### Pollang Programming Language
+A conceptual language exploring labor verification through code:
 
-git clone https://github.com/mnjilnk/BKTI.git
-cd BKTI
+```pollang
+contract LaborVerification {
+    function processWork(participant, workType) {
+        if (block.type == PoW) {
+            validateComputationalWork();
+        } else {
+            validateCommercialActivity(); 
+        }
+        distributeRewards(participant);
+    }
+}
+```
 
-Configure your blockchain network:
+## Potential Applications
 
-Update the config.json and genesis.json files as needed.
+This hybrid architecture theoretically enables:
+- Multi-layer confirmation systems for different transaction types
+- Programmable economic incentives tied to real-world activity
+- Self-custodial infrastructure without wrapped assets
+- Academic research into alternative consensus mechanisms
 
-Initialize the blockchain:
+## Contributing
 
-geth --datadir ./data init ./genesis.json
+We welcome contributions from researchers and developers interested in experimental consensus mechanisms:
 
-Start your node:
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/consensus-research`)
+3. Commit your changes (`git commit -m 'Add consensus analysis'`)
+4. Push to the branch (`git push origin feature/consensus-research`)
+5. Open a Pull Request
 
-geth --datadir ./data --networkid 1337
+## License
 
-Contributing
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-We welcome contributions from the community. If you'd like to contribute:
+## Contact
 
-Fork this repository.
+**Research Lead**: Mathuresh Das  
+**Email**: mathuresh@bhakticoin.io
 
-Create a new branch (git checkout -b feature/your-feature).
+---
 
-Commit your changes (git commit -m 'Add your feature').
-
-Push to the branch (git push origin feature/your-feature).
-
-Open a pull request.
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Contact
-
-For questions or support, reach out to the BKTI team at mathuresh108@gmail.com.
-
-Future Plans
-
-Integration with LXMIswap for liquidity pools.
-
-Implementation of staking features.
-
-Enhanced security features and monitoring tools.
+*BHKTI: Theoretical exploration of blockchain consensus mechanisms that could reward verifiable work over speculation.*
